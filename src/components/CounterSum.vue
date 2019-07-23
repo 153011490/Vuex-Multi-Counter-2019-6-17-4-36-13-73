@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="index in (parseInt(counter)||0)" :key="index">
+    <div v-for="index in (parseInt(this.$store.getters.getCountNumber)||0)" :key="index">
       <CounterGroup></CounterGroup>
     </div>
     <div>
@@ -15,7 +15,6 @@ import CounterGroup from './CounterGroup';
 
 export default {
   name: 'CounterSum',
-  props:['counter'],
   components:{
       CounterGroup
   }
